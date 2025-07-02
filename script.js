@@ -1,5 +1,5 @@
 // ESP32 IP Address (change this to your ESP32's IP)
-const ESP32_IP = "192.168.0.19"; 
+const ESP32_IP = "192.168.0.191"; 
 
 // Unit mappings
 const UNITS = ['', '°C', '°F', 'mA', 'V', '%', 'kg', 'lb', 'kPa', 'psi', 'L/min'];
