@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Indicator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="nav">
+    <a href="/" class="active">Dashboard</a>
+    <a href="#" onclick="loadSettings()">Settings</a>
+    <a href="#" onclick="loadCalibration()">Calibration</a>
+  </div>
+
+  <div class="process-indicator">
+    <div class="top-bar">
+      <div class="logo">🔵 SANSEL<sup>®</sup></div>
+      <div class="title">PROCESS INDICATOR</div>
+    </div>
+
+    <div class="display-container">
+      <div class="display-area">
+        <div class="value-display">
+          <span id="processValue">--</span>
+          <span id="unitValue" class="unit"></span>
+        </div>
+      </div>
+
+      <div class="indicators">
+        <div id="relay1-led" class="led" title="Relay 1">OUT1</div>
+        <div id="relay2-led" class="led" title="Relay 2">OUT2</div>
+        <div id="alm-led" class="led" title="Alarm">ALM</div>
+        <div id="c-led" class="led" title="Celsius">°C</div>
+        <div id="f-led" class="led" title="Fahrenheit">°F</div>
+      </div>
+    </div>
+
+    <div class="model">PIJ 542 A1</div>
+  </div>
+
+  <div id="settings-view" class="content-container" style="display:none;">
+    <h1>Settings</h1>
+    <div class="card">
+      <div class="form-group">
+        <label for="out1Low">OUT1 Low Value:</label>
+        <input type="number" id="out1Low">
+        <button onclick="saveSetting(1, 'out1Low')">Save</button>
+        <span id="out1Low-status"></span>
+      </div>
+      <!-- Add more settings fields as needed -->
+    </div>
+  </div>
+
+  <div id="calibration-view" class="content-container" style="display:none;">
+    <h1>Calibration</h1>
+    <div class="card">
+      <div class="form-group">
+        <label for="calibVal">Calibration Value:</label>
+        <input type="number" id="calibVal">
+        <button onclick="saveSetting(100, 'calibVal')">Set</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
